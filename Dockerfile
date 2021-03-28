@@ -13,10 +13,7 @@ RUN export DEBIAN_FRONTEND=noninteractive ; \
     apt-get clean ; \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
-RUN set -e -x ; \
-    RELEASE=$(curl -sX GET "https://api.github.com/repos/cdr/code-server/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]' \
-    | sed "s/v//") ; \
+RUN RELEASE=3.8.1 ; \
     wget https://github.com/cdr/code-server/releases/download/v"$RELEASE"/code-server-"$RELEASE"-linux-amd64.tar.gz ; \
     tar -xzvf code-server-"$RELEASE"-linux-amd64.tar.gz ; \
     cp -r code-server-"$RELEASE"-linux-amd64 /usr/lib/code-server ; \
