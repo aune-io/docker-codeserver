@@ -25,8 +25,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" ; 
     mv composer.phar /usr/local/bin/composer
 
 # Install Code Server
-RUN RELEASE=$(curl -sX GET "https://api.github.com/repos/cdr/code-server/releases/latest" \
-    | awk '/tag_name/{print $4;exit}' FS='[""]'); \
+RUN set -e -x ; \
+    RELEASE=$(curl -sX GET "https://api.github.com/repos/cdr/code-server/releases/latest" \
+    | awk '/tag_name/{print $4;exit}' FS='[""]' \
+    | sed "s/v//") ; \
     wget https://github.com/cdr/code-server/releases/download/v"$RELEASE"/code-server-"$RELEASE"-linux-amd64.tar.gz ; \
     tar -xzvf code-server-"$RELEASE"-linux-amd64.tar.gz ; \
     cp -r code-server-"$RELEASE"-linux-amd64 /usr/lib/code-server ; \
