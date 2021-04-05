@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive ; \
     apt-get -y autoremove ; \
     apt-get autoclean ; \
     apt-get clean ; \
-    apt-get -y install sudo nano htop curl wget git nodejs npm mysql-client ; \
+    apt-get -y install sudo nano htop curl wget unzip git git-flow nodejs npm mysql-client ; \
     apt-get autoclean ; \
     apt-get clean ; \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
