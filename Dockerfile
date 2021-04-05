@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive ; \
     apt-get -y autoremove ; \
     apt-get autoclean ; \
     apt-get clean ; \
-    apt-get -y install sudo nano htop curl wget git nodejs npm mysql-client ; \
+    apt-get -y install sudo nano htop curl wget unzip git git-flow nodejs npm mysql-client ; \
     apt-get -y install software-properties-common ; \
     add-apt-repository ppa:ondrej/php ; \
     apt-get -y install php7.4 php7.4-mysql php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath php7.4-gd php7.4-intl php7.4-soap php7.4-zip php7.4-cli libapache2-mod-php7.4 ; \
