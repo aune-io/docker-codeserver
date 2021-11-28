@@ -8,10 +8,15 @@ RUN export DEBIAN_FRONTEND=noninteractive ; \
     apt-get -y autoremove ; \
     apt-get autoclean ; \
     apt-get clean ; \
-    apt-get -y install sudo nano htop curl wget unzip git git-flow nodejs npm mysql-client ; \
+    apt-get -y install sudo nano htop curl wget unzip git git-flow nodejs npm mysql-client postgresql-client ; \
     apt-get autoclean ; \
     apt-get clean ; \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+
+RUN npm i -g n
+RUN n stable
+RUN npm i -g yarn
+RUN npm i -g prisma
 
 RUN RELEASE=3.8.1 ; \
     wget https://github.com/cdr/code-server/releases/download/v"$RELEASE"/code-server-"$RELEASE"-linux-amd64.tar.gz ; \
