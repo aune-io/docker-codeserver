@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive ; \
     apt-get -y install sudo nano htop curl wget unzip git git-flow nodejs npm mysql-client ; \
     apt-get -y install software-properties-common ; \
     add-apt-repository ppa:ondrej/php ; \
-    apt-get -y install php7.4 php7.4-mysql php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath php7.4-gd php7.4-intl php7.4-soap php7.4-zip php7.4-cli libapache2-mod-php7.4 ; \
+    apt-get -y install php8.1 php8.1-mysql php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath php8.1-gd php8.1-intl php8.1-soap php8.1-zip php8.1-cli libapache2-mod-php8.1 ; \
     apt-get autoclean ; \
     apt-get clean ; \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
